@@ -1,8 +1,8 @@
-#📁 Chat Messenger (React)
+# 📁 Chat Messenger (React)
 
 > 간단한 채팅 UI에서 텍스트 메시지 전송과 파일 업로드/미리보기/다운로드 기능을 제공하는 React 프로젝트입니다.
 
-<img src="/images/preview.png" alt="채팅 이미지 예시" width="400" />
+<img src="images/preview.png" alt="채팅 이미지 예시" width="400" />
 
 ### ✨ 주요 기능
 
