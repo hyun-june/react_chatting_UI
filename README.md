@@ -1,7 +1,8 @@
 # 📁 Chat Messenger (React)
 
 > 간단한 채팅 UI에서 텍스트 메시지 전송과 파일 업로드/미리보기/다운로드 기능을 제공하는 React 프로젝트입니다.
-> [구경가기]https://hyun-june.github.io/react_chatting_UI/
+
+[구경가기]https://hyun-june.github.io/react_chatting_UI/
 
 <p align="center">
 <img src="https://github.com/hyun-june/react_chatting_UI/blob/main/public/images/preview.png?raw=true" alt="채팅 이미지 예시" width="400" />
