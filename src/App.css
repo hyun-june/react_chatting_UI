@@ -1,0 +1,70 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  height: 100vh;
+  margin: 0em 2em;
+}
+
+.message_section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2em;
+
+  p {
+    margin: 0;
+  }
+
+  .message {
+    padding: 8px;
+    border-radius: 12px;
+    max-width: 50%;
+    margin-bottom: 5px;
+  }
+
+  .user {
+    background-color: #90cbfb;
+    align-self: flex-end;
+  }
+
+  .other {
+    background-color: white;
+    align-self: flex-start;
+  }
+}
+
+.send_message {
+  padding: 0em 1em;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  textarea {
+    resize: none;
+    height: 2em;
+    border: 2px solid greenyellow;
+    width: 100%;
+    border-radius: 8px;
+    padding-left: 3em;
+    line-height: 2em;
+    font-size: 1.2em;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  label {
+    position: absolute;
+    left: 1.5em;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: inherit;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+}
