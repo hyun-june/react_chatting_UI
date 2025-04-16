@@ -2,20 +2,18 @@
 
 > 간단한 채팅 UI에서 텍스트 메시지 전송과 파일 업로드/미리보기/다운로드 기능을 제공하는 React 프로젝트입니다.
 
-<img src="images/preview.png" alt="채팅 이미지 예시" width="400" />
+<div align="center">
+<img src="https://github.com/hyun-june/react_chatting_UI/blob/main/public/images/preview.png?raw=true" alt="채팅 이미지 예시" width="400" />
+</div>
 
 ### ✨ 주요 기능
 
-<ul>
-<li>💬 텍스트 기반 채팅 메시지 전송</li>
-<li>📎 이미지, PDF, 기타 파일 업로드 및 전송</li>
-<li>🖼 이미지 미리보기 지원 (JPEG, PNG 등)</li>
-<li>📄 PDF 링크로 열기 지원
-</li>
-<li>⬇ 기타 파일 다운로드 지원</li>
-<li>🔄 Object URL 정리로 메모리 누수 방지
-</li>
-</ul>
+- 💬 텍스트 기반 채팅 메시지 전송
+- 📎 이미지, PDF, 기타 파일 업로드 및 전송
+- 🖼 이미지 미리보기 지원 (JPEG, PNG 등)
+- 📄 PDF 링크로 열기 지원
+- ⬇ 기타 파일 다운로드 지원
+- 🔄 Object URL 정리로 메모리 누수 방지
 
 ## 💻 사용법
 
