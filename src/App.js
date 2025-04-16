@@ -73,7 +73,7 @@ function App() {
   console.log("파일", fileList);
 
   return (
-    <div className="chat">
+    <div className="chatting_container">
       <div className="message_section">
         {messages.map((message, index) => (
           <div
