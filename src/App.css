@@ -2,15 +2,38 @@
   display: flex;
   flex-direction: column;
   background-color: beige;
-  height: 100vh;
-  margin: 0em 2em;
+  min-height: 100dvh;
+
+  .start_message {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+    span {
+      padding-bottom: 0.2em;
+      border-bottom: 2px solid black;
+      width: max-content;
+    }
+  }
 }
 
 .message_section {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 2em;
+  padding: 1em 2em;
+
+  .message_box {
+    display: flex;
+    max-width: 50%;
+  }
+
+  .profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
   p {
     margin: 0;
@@ -19,19 +42,36 @@
   .message {
     padding: 8px;
     border-radius: 12px;
-    max-width: 50%;
-    margin-bottom: 5px;
+    max-width: 80%;
+    margin: 2px 8px;
+    word-break: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
   }
 
-  .user {
-    background-color: #90cbfb;
-    align-self: flex-end;
+  .message-content {
+    margin: 0;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
+}
 
-  .other {
-    background-color: white;
-    align-self: flex-start;
-  }
+.message.user {
+  background-color: rgb(189, 181, 211);
+}
+
+.message.other {
+  background-color: white;
+}
+
+.message_box.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message_box.other {
+  align-self: flex-start;
 }
 
 .send_message {

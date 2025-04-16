@@ -1,11 +1,27 @@
 import { useEffect, useRef, useState } from "react";
-import "./App.css";
 import FileContent from "./components/FileContent/FileContent";
+import "./App.css";
 
 function App() {
+  const chattingUserData = {
+    other: {
+      nickname: "모코모코",
+      src: "https://png.pngtree.com/png-clipart/20220112/ourmid/pngtree-cartoon-hand-drawn-default-avatar-png-image_4154232.png",
+    },
+    user: {
+      nickname: "고양이",
+      src: "https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    },
+  };
+
   const [messages, setMessages] = useState([
     { sender: "other", text: "안녕하세요!" },
+    { sender: "other", text: "안녕하세요!" },
   ]);
+
+  const basicProfile =
+    "https://mblogthumb-phinf.pstatic.net/MjAyMDExMDFfMTgy/MDAxNjA0MjI4ODc1NDMw.Ex906Mv9nnPEZGCh4SREknadZvzMO8LyDzGOHMKPdwAg.ZAmE6pU5lhEdeOUsPdxg8-gOuZrq_ipJ5VhqaViubI4g.JPEG.gambasg/%EC%9C%A0%ED%8A%9C%EB%B8%8C_%EA%B8%B0%EB%B3%B8%ED%94%84%EB%A1%9C%ED%95%84_%ED%95%98%EB%8A%98%EC%83%89.jpg?type=w800";
+
   const [newMessage, setNewMessage] = useState("");
   const [fileList, setFileList] = useState([{ sender: "other", name: "pdf" }]);
   const [newFile, setNewFile] = useState(null);
@@ -74,28 +90,43 @@ function App() {
 
   return (
     <div className="chatting_container">
+      <div className="start_message">
+        <span>CHAT을 시작했습니다!</span>
+      </div>
       <div className="message_section">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`message ${
-              message.sender === "user" ? "user" : "other"
-            }`}
-          >
-            {message.type === "file" ? (
-              <FileContent message={message} />
-            ) : (
-              <p>
-                {message.text?.split("\n").map((textLine, i) => (
-                  <span key={i}>
-                    {textLine}
-                    <br />
-                  </span>
-                ))}
-              </p>
-            )}
-          </div>
-        ))}
+        {messages.map((message, index) => {
+          const userProfile =
+            chattingUserData[message.sender]?.src || basicProfile;
+
+          const isGroup =
+            index === 0 || messages[index - 1].sender !== message.sender;
+          return (
+            <div
+              className={`message_box ${
+                message.sender === "user" ? "user" : "other"
+              }`}
+            >
+              {isGroup ? (
+                <img className="profile" src={userProfile} />
+              ) : (
+                <div className="profile" />
+              )}
+
+              <div
+                key={index}
+                className={`message ${
+                  message.sender === "user" ? "user" : "other"
+                }`}
+              >
+                {message.type === "file" ? (
+                  <FileContent message={message} />
+                ) : (
+                  <pre className="message-content">{message.text}</pre>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
       <div className="send_message">
         <input
