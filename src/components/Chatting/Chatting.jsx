@@ -14,6 +14,7 @@ const Chatting = ({ ...props }) => {
   const [fileList, setFileList] = useState([prevFile]);
   const [newFile, setNewFile] = useState(null);
   const fileInputRef = useRef(null);
+  const bottomRef = useRef(null);
   const objectURLs = useRef([]);
 
   useEffect(() => {
@@ -21,6 +22,10 @@ const Chatting = ({ ...props }) => {
       objectURLs.current.forEach((url) => URL.revokeObjectURL(url));
     };
   }, []);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const sendMessage = () => {
     if (newMessage.trim() === "" && !newFile) return;
@@ -114,6 +119,7 @@ const Chatting = ({ ...props }) => {
             </div>
           );
         })}
+        <div ref={bottomRef}></div>
       </div>
       <div className="send_message">
         <input

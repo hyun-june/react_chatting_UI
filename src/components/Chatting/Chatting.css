@@ -22,7 +22,7 @@
   flex-direction: column;
   flex: 1;
   padding: 1em;
-
+  overflow: auto;
   .message_box {
     display: flex;
     max-width: 50%;
