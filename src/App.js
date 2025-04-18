@@ -1,5 +1,6 @@
 import Chatting from "./components/Chatting/Chatting";
 import "./App.css";
+import UseCam from "./components/UseCam/UseCam";
 
 // 유저 정보
 const chatUserData = {
@@ -36,6 +37,8 @@ const App = () => {
         prevData={prevMessage}
         prevFile={prevFile}
       />
+
+      {/* <UseCam /> */}
     </div>
   );
 };
